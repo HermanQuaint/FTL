@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тестовое задание</title>
+</head>
+<body>
+<div class="container">
+  <form class="form" action="#">
+    <h1 class="form__title">FTL: Прямая машина</h1>
+    <fieldset class="fieldset route">
+      <h2 class="route__title title">Маршрут</h2>
+      <label class="label route__label">Откуда<input class="input input--bg route__input" type="text"></label>
+      <label class="label route__label">Куда<input class="input input--bg route__input" type="text"></label>
+    </fieldset>
+    <div class="column">
+      <fieldset class="fieldset transport">
+        <h2 class="transport__title title">Транспорт</h2>
+        <div class="transport__wrapper">
+          <label class="label transport__label">Грузоподъёмность
+            <select class="input--select input input--sm transport__select" name="carrying" id="carrying">
+              <option value="none" selected disabled hidden>Не выбрана</option>
+              <option value="small">Малая (0,5-2 тонны)</option>
+              <option value="average">Средняя (от 2 до 5 тонн)</option>
+              <option value="big">Большая (5-16 тонн)</option>
+              <option value="very-big">Особо большая (от 16 тонн)</option>
+            </select>
+          </label>
+          <label class="label transport__label">Способ погрузки
+            <select class="input--select input input--sm transport__select" name="" id="load-method" data-selected>
+              <option value="back" selected>Задняя</option>
+              <option value="side">Боковая</option>
+              <option value="upper">Верхняя</option>
+            </select>
+          </label>
+        </div>
+      </fieldset>
+      <fieldset class="fieldset cargo">
+        <h2 class="cargo__title title">Груз</h2>
+        <div class="cargo__wrapper">
+          <label class="label cargo__type">Тип груза
+            <select class="input input--select input--sm cargo__type__select" name="cargo-type" id="cargo-type">
+              <option value="none" selected disabled hidden>Не выбрана</option>
+              <option value="bulk">Навалочный и насыпной</option>
+              <option value="dusty">Пылевидный (порошкообразный)</option>
+              <option value="pour">Наливной</option>
+              <option value="gaseous">Газообразный</option>
+              <option value="piece">Штучный (генеральный)</option>
+              <option value="perishable">Скоропортящийся</option>
+              <option value="oversize">Негабаритный</option>
+              <option value="dangerous">Опасный</option>
+            </select>
+          </label>
+          <label class="label cargo__danger cargo__danger--none">Класс опасности
+            <select class="input input--select input--sm cargo__danger__select" name="hazard-class" id="hazard-class"
+                    data-selected>
+              <option value="1">Класс 1 — взрывчатые материалы и предметы</option>
+              <option value="2">Класс 2 — сжатые, сжиженные и растворённые под давлением газы</option>
+              <option value="3">Класс 3 — легко воспламеняющиеся жидкости</option>
+              <option value="4">Класс 4 — легко воспламеняющиеся твёрдые вещества, самовозгорающиеся вещества
+                и вещества, выделяющие воспламеняющиеся газы при соприкосновении с водой
+              </option>
+              <option value="5">Класс 5 — окисляющие вещества и органические перекиси</option>
+              <option value="6">Класс 6 — ядовитые вещества и побочные продукты переработки животных и
+                инфекционные вещества
+              </option>
+              <option value="7">Класс 7 — радиоактивные материалы</option>
+              <option value="8">Класс 8 — коррозирующие вещества</option>
+              <option value="9">Класс 9 — прочие опасные вещества</option>
+            </select>
+          </label>
+          <label class="label cargo__price">Объявленная ценность, ₽
+            <input class="input input--sm " type="text" placeholder="≥ 1">
+          </label>
+          <label class="cargo__temp-regime">
+            <input class="cargo__temp-regime__input" type="checkbox" checked>
+            <span class="cargo__temp-regime__checkbox"></span>
+            Требуется температурный режим
+          </label>
+          <div class="temp__wrapper temp__wrapper--none">
+            <label class="label">От, °C<input class="input input--sm" type="text" value="-20"></label>
+            <label class="label">До, °C<input class="input input--sm" type="text" value="+23"></label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <fieldset class="fieldset time">
+      <h2 class="time__title title">Время</h2>
+      <div class="time__label">
+        <span>Когда прибыть на точку</span>
+        <span class="time__dpd">700 км в день</span>
+      </div>
+      <div class="time__address-wrapper">
+        <div class="time__address-inner">
+          <span class="time__dot time__dot--active"></span>
+          <span class="time__address">Длинный адрес с градиентом</span>
+          <button class="button">Не выбрано</button>
+        </div>
+        <div class="time__address-inner">
+          <span class="time__dot"></span>
+          <span class="time__address">Адрес не указан</span>
+          <button class="button" disabled>Не выбрано</button>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="fieldset comment">
+      <label>Комментарий к заказу
+        <textarea class="input comment__textarea"
+                  placeholder="Укажите особенности въезда на территорию склада или подъезда к адресу"></textarea>
+      </label>
+    </fieldset>
+  </form>
+  <p class="prompt">
+    Для расчета стоимости необходимо ввести параметры груза, пункты отправки и прибытия.
+  </p>
+</div>
+</body>
+</html>
