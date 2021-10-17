@@ -155,7 +155,7 @@ input[type="radio"].visually-hidden {
     content: counter(section);
     counter-increment: section;
     position: absolute;
-    top: 0;
+    top: -3px;
     left: 7px;
 
     font-size: 16px;
