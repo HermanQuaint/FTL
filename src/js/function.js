@@ -40,6 +40,4 @@ const checked = () => {
 }
 
 checked();
-cargoTempRegimeInput.addEventListener('click', () => {
-  checked();
-});
+cargoTempRegimeInput.addEventListener('click', checked);
